@@ -66,12 +66,10 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::get('/orders', [AdminOrderController::class, 'index'])->name('orders.index');
     Route::get('/orders/{id}', [AdminOrderController::class, 'show'])->name('orders.show');
     Route::delete('/orders/{id}', [AdminOrderController::class, 'destroy'])->name('orders.destroy');
+
+    // CRUD RESOURCES (Services, Articles, Galleries) untuk Admin
+    // Otomatis memiliki URL /admin/services, /admin/articles, dst.
+    Route::resource('services', ServiceController::class);
+    Route::resource('articles', ArticleController::class);
+    Route::resource('galleries', GalleryController::class);
 });
-
-
-// ==========================================
-// 4. CRUD RESOURCES (Services, Articles, Galleries)
-// ==========================================
-Route::resource('services', ServiceController::class);
-Route::resource('articles', ArticleController::class);
-Route::resource('galleries', GalleryController::class);
