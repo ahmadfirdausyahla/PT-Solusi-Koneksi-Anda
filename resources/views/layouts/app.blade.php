@@ -4,28 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'PT Solusi Koneksi Anda - IoT & Robotics Intelligence')</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            dark: '#0B0F19',
-                            blue: '#2563EB',
-                            accent: '#3B82F6',
-                            light: '#F8FAFC',
-                            card: '#F1F5F9'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['-apple-system', 'BlinkMacSystemFont', "SF Pro Display", "SF Pro Text", "Helvetica Neue", 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
+
+    <!-- Vite CSS & JS -->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
     <!-- AOS CSS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
@@ -40,7 +22,7 @@
         }
     </style>
 </head>
-<body class="bg-brand-light text-brand-dark font-sans selection:bg-brand-blue selection:text-white antialiased">
+<body class="bg-[#F8FAFC] text-[#0B0F19] font-sans selection:bg-blue-600 selection:text-white antialiased">
 
     <!-- Include Navbar -->
     @include('partials.navbar')
@@ -65,7 +47,7 @@
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const counters = document.querySelectorAll('.counter');
-            const speed = 100; // Kecepatan animasi
+            const speed = 100;
 
             const runCounter = (counter) => {
                 const target = +counter.getAttribute('data-target');
