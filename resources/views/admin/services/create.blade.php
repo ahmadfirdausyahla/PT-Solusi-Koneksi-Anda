@@ -9,7 +9,7 @@
             <h1 class="text-xl font-bold text-slate-900">Tambah Layanan IoT Baru</h1>
             <p class="text-xs text-slate-500 mt-0.5">Form penambahan layanan dan tarif solusi perusahaan.</p>
         </div>
-        <a href="{{ route('services.index') }}" class="text-xs font-semibold text-slate-600 hover:text-blue-600">&larr; Kembali</a>
+        <a href="{{ route('admin.services.index') }}" class="text-xs font-semibold text-slate-600 hover:text-blue-600">&larr; Kembali</a>
     </div>
 
     @if($errors->any())
@@ -22,7 +22,7 @@
         </div>
     @endif
 
-    <form action="{{ route('services.store') }}" method="POST" enctype="multipart/form-data" class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-xs space-y-6">
+    <form action="{{ route('admin.services.store') }}" method="POST" enctype="multipart/form-data" class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-xs space-y-6">
         @csrf
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -58,7 +58,7 @@
         </div>
 
         <div class="flex justify-end gap-3 pt-4 border-t border-slate-100">
-            <a href="{{ route('services.index') }}" class="px-6 py-3 rounded-2xl text-xs font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition-colors">Batal</a>
+            <a href="{{ route('admin.services.index') }}" class="px-6 py-3 rounded-2xl text-xs font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition-colors">Batal</a>
             <button type="submit" class="px-6 py-3 rounded-2xl text-xs font-semibold bg-blue-600 text-white hover:bg-blue-700 transition-colors shadow-sm">Simpan Layanan</button>
         </div>
     </form>

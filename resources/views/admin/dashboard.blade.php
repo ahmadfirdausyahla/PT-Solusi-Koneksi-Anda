@@ -19,7 +19,7 @@
             <span class="text-xs font-semibold text-slate-500">Artikel Dipublikasi</span>
             <div>
                 <h2 class="text-3xl font-bold text-slate-900">{{ $totalArticles }}</h2>
-                <a href="{{ route('articles.index') }}" class="text-[11px] font-medium text-slate-400 hover:text-blue-600 block">Kelola Artikel &rarr;</a>
+                <a href="{{ route('admin.articles.index') }}" class="text-[11px] font-medium text-slate-400 hover:text-blue-600 block">Kelola Artikel &rarr;</a>
             </div>
         </div>
 
@@ -27,7 +27,7 @@
             <span class="text-xs font-semibold text-slate-500">Dokumentasi Galeri</span>
             <div>
                 <h2 class="text-3xl font-bold text-slate-900">{{ $totalGalleries }}</h2>
-                <a href="{{ route('galleries.index') }}" class="text-[11px] font-medium text-slate-400 hover:text-blue-600 block">Lihat Foto &rarr;</a>
+                <a href="{{ route('admin.galleries.index') }}" class="text-[11px] font-medium text-slate-400 hover:text-blue-600 block">Lihat Foto &rarr;</a>
             </div>
         </div>
 
@@ -122,7 +122,7 @@
                             <p class="text-xs font-bold text-slate-800 line-clamp-1">{{ $art->title }}</p>
                             <p class="text-[10px] text-slate-400">{{ \Carbon\Carbon::parse($art->date)->format('d M Y') }}</p>
                         </div>
-                        <a href="{{ route('articles.edit', $art->id) }}" class="text-[11px] text-blue-600 font-semibold">Edit</a>
+                        <a href="{{ route('admin.articles.edit', $art->id) }}" class="text-[11px] text-blue-600 font-semibold">Edit</a>
                     </div>
                 @empty
                     <p class="text-xs text-slate-400">Belum ada artikel.</p>
@@ -158,7 +158,7 @@
                             <p class="text-xs font-bold text-slate-800 line-clamp-1">{{ $srv->name }}</p>
                             <p class="text-[10px] text-blue-600 font-bold">Rp {{ number_format($srv->price, 0, ',', '.') }}</p>
                         </div>
-                        <a href="{{ route('services.edit', $srv->id) }}" class="text-[11px] text-blue-600 font-semibold">Edit</a>
+                        <a href="{{ route('admin.services.edit', $srv->id) }}" class="text-[11px] text-blue-600 font-semibold">Edit</a>
                     </div>
                 @empty
                     <p class="text-xs text-slate-400">Belum ada layanan.</p>

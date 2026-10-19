@@ -10,7 +10,7 @@
             <h1 class="text-xl font-bold text-slate-900">Manajemen Layanan IoT</h1>
             <p class="text-xs text-slate-500 mt-0.5">Kelola daftar layanan dan harga solusi perusahaan.</p>
         </div>
-        <a href="{{ route('services.create') }}" class="bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold px-5 py-3 rounded-2xl transition-colors shadow-sm">
+        <a href="{{ route('admin.services.create') }}" class="bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold px-5 py-3 rounded-2xl transition-colors shadow-sm">
             + Tambah Layanan Baru
         </a>
     </div>
@@ -48,8 +48,8 @@
                             <td class="py-4 text-blue-600 font-bold">Rp {{ number_format($service->price, 0, ',', '.') }}</td>
                             <td class="py-4 text-slate-500 max-w-xs truncate">{{ $service->description }}</td>
                             <td class="py-4 text-right space-x-2">
-                                <a href="{{ route('services.edit', $service->id) }}" class="text-blue-600 hover:underline font-semibold">Edit</a>
-                                <form action="{{ route('services.destroy', $service->id) }}" method="POST" class="inline" onsubmit="return confirm('Yakin ingin menghapus layanan ini?');">
+                                <a href="{{ route('admin.services.edit', $service->id) }}" class="text-blue-600 hover:underline font-semibold">Edit</a>
+                                <form action="{{ route('admin.services.destroy', $service->id) }}" method="POST" class="inline" onsubmit="return confirm('Yakin ingin menghapus layanan ini?');">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="text-rose-600 hover:underline font-semibold">Hapus</button>

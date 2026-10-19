@@ -10,7 +10,7 @@
             <h1 class="text-xl font-bold text-slate-900">Manajemen Galeri Kegiatan</h1>
             <p class="text-xs text-slate-500 mt-0.5">Kelola dokumentasi foto proyek lapangan dan sistem IoT.</p>
         </div>
-        <a href="{{ route('galleries.create') }}" class="bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold px-5 py-3 rounded-2xl transition-colors shadow-sm">
+        <a href="{{ route('admin.galleries.create') }}" class="bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold px-5 py-3 rounded-2xl transition-colors shadow-sm">
             + Tambah Galeri Baru
         </a>
     </div>
@@ -50,8 +50,8 @@
                                 </span>
                             </td>
                             <td class="py-4 text-right space-x-2">
-                                <a href="{{ route('galleries.edit', $gallery->id) }}" class="text-blue-600 hover:underline font-semibold">Edit</a>
-                                <form action="{{ route('galleries.destroy', $gallery->id) }}" method="POST" class="inline" onsubmit="return confirm('Yakin ingin menghapus foto galeri ini?');">
+                                <a href="{{ route('admin.galleries.edit', $gallery->id) }}" class="text-blue-600 hover:underline font-semibold">Edit</a>
+                                <form action="{{ route('admin.galleries.destroy', $gallery->id) }}" method="POST" class="inline" onsubmit="return confirm('Yakin ingin menghapus foto galeri ini?');">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="text-rose-600 hover:underline font-semibold">Hapus</button>

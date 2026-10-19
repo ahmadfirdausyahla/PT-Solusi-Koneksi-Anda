@@ -6,7 +6,7 @@
     <title>@yield('title', 'PT Solusi Koneksi Anda - IoT & Robotics Intelligence')</title>
 
     <!-- Vite CSS & JS -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- AOS CSS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">

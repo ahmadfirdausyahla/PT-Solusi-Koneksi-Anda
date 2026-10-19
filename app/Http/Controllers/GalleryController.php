@@ -18,7 +18,7 @@ class GalleryController extends Controller
     public function index(): View
     {
         $galleries = Gallery::latest()->paginate(10);
-        return view('admin.gallery.index', compact('galleries'));
+        return view('admin.galleries.index', compact('galleries'));
     }
 
     /**
@@ -26,7 +26,7 @@ class GalleryController extends Controller
      */
     public function create(): View
     {
-        return view('admin.gallery.create');
+        return view('admin.galleries.create');
     }
 
     /**
@@ -42,7 +42,7 @@ class GalleryController extends Controller
 
         Gallery::create($data);
 
-        return redirect()->route('admin.gallery.index')
+        return redirect()->route('admin.galleries.index')
             ->with('success', 'Gallery item created successfully.');
     }
 
@@ -51,7 +51,7 @@ class GalleryController extends Controller
      */
     public function show(Gallery $gallery): View
     {
-        return view('admin.gallery.show', compact('gallery'));
+        return view('admin.galleries.show', compact('gallery'));
     }
 
     /**
@@ -59,7 +59,7 @@ class GalleryController extends Controller
      */
     public function edit(Gallery $gallery): View
     {
-        return view('admin.gallery.edit', compact('gallery'));
+        return view('admin.galleries.edit', compact('gallery'));
     }
 
     /**
@@ -79,7 +79,7 @@ class GalleryController extends Controller
 
         $gallery->update($data);
 
-        return redirect()->route('admin.gallery.index')
+        return redirect()->route('admin.galleries.index')
             ->with('success', 'Gallery item updated successfully.');
     }
 
@@ -94,7 +94,7 @@ class GalleryController extends Controller
         
         $gallery->delete();
 
-        return redirect()->route('admin.gallery.index')
+        return redirect()->route('admin.galleries.index')
             ->with('success', 'Gallery item deleted successfully.');
     }
 }
